@@ -30,7 +30,7 @@ module VagrantPlugins
       end
 
       def self.s3_client(region = DEFAULT_REGION)
-        ::Aws::S3::Client.new(region: region)
+        ::Aws::S3::Client.new(region: region, use_accelerate_endpoint: true)
       end
 
       def self.s3_resource(region = DEFAULT_REGION)

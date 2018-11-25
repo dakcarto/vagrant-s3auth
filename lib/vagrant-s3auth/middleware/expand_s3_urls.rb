@@ -15,7 +15,8 @@ module VagrantPlugins
             bucket = url.host
             key = url.path[1..-1]
             raise Errors::MalformedShorthandURLError, url: url unless bucket && key
-            next "http://s3-placeholder.amazonaws.com/#{bucket}/#{key}"
+            # next "http://s3-placeholder.amazonaws.com/#{bucket}/#{key}"
+            next "https://#{bucket}.s3-accelerate.amazonaws.com/#{key}"
           end
 
           url_string
